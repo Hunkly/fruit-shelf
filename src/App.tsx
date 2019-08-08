@@ -6,6 +6,7 @@ import FruitBox from './components/FruitBox/FruitBox.component';
 import lemon from './assets/img/lemon.png'
 import orange from './assets/img/orange.png'
 import apple from './assets/img/apple.png'
+import FruitShelf from "./components/FruitShelf/FruitShelf.component";
 
 export interface IFruit {
     kind: string,
@@ -31,11 +32,18 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <header className="App-header">
-      <FruitBox defaultKind="lemon" fruits = {Fruits}>
-        <Fruit/>
-        <Fruit/>
-        <Fruit/>
-      </FruitBox>
+      <FruitShelf>
+          <FruitBox defaultKind="lemon" fruits = {Fruits}>
+            <Fruit/>
+            <Fruit/>
+            <Fruit/>
+          </FruitBox>
+          <FruitBox defaultKind="lemon" fruits = {Fruits}>
+              <Fruit/>
+              <Fruit/>
+              <Fruit/>
+          </FruitBox>
+      </FruitShelf>
       </header>
     </div>
   );
