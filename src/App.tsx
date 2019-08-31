@@ -8,40 +8,20 @@ import orange from './assets/img/orange.png'
 import apple from './assets/img/apple.png'
 import FruitShelf from "./components/FruitShelf/FruitShelf.component";
 
-export interface IFruit {
-    kind: string,
-    size: number
-}
-
-const Fruits: IFruit[] = [
-    {
-        kind: apple,
-        size: 1
-    },
-    {
-        kind: lemon,
-        size: 4
-    },
-    {
-        kind: orange,
-        size: 3
-    }
-]
-
 const App: React.FC = () => {
   return (
     <div className="App">
       <header className="App-header">
       <FruitShelf>
-          <FruitBox defaultKind="lemon" fruits = {Fruits}>
+          <FruitBox defaultKind={apple} defaultSize={4}>
             <Fruit/>
-            <Fruit/>
+            <Fruit kind={lemon} size={1}/>
             <Fruit/>
           </FruitBox>
-          <FruitBox defaultKind="lemon" fruits = {Fruits}>
-              <Fruit/>
-              <Fruit/>
-              <Fruit/>
+          <FruitBox defaultKind={lemon} defaultSize={4}>
+            <Fruit/>
+            <Fruit/>
+            <Fruit kind={orange} size={3}/>
           </FruitBox>
       </FruitShelf>
       </header>
